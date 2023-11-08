@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L!BRARY</title>
+
+      <!-- Bootstrap core CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="icon" href="" sizes="50x50"  >
+
+
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="./fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+   
+
+    <style>
+      .dropdown-toggle{
+        border: none;
+      }
+    </style>
+</head>
+<body>
+
+    <!--Menu-->
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+        <div class="container-fluid " >
+          <!--Imagen-->
+          <a class="ra-brand me-5" href="http://localhost:8080/TEMA2/Practica1/E2/index.php"> <img src="./img/l.png" width="200px" height="70px" style="border-radius: 20px;"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+         <!--Menus desplegables-->
+          <div class="dropdown ms-5 ">
+            
+            <a class="btn btn-secondary dropdown-toggle bg-transparent" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              CHEQUE REGALO
+            </a>
+          
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="#">COMPRA CHEQUE REGALO</a></li>
+              <li><a class="dropdown-item" href="#">CONSULTA ESTADO Y SALDO</a></li>
+            
+            </ul>
+
+          
+          </div>
+
+          <div class="dropdown ms-5">
+            <a class="btn btn-secondary dropdown-toggle bg-transparent" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              CATEGORIAS
+             </a>
+          
+             <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="http://localhost:8080/TEMA2/Practica1/E2/novelanegra.php">NOVELA NEGRA</a></li>
+               <li><a class="dropdown-item" href="http://localhost:8080/TEMA2/Practica1/E2/novelahistoria.php">NOVELA HISTORICA</a></li>
+               <li><a class="dropdown-item" href="http://localhost:8080/TEMA2/Practica1/E2/ciencia.php">CIENCIAS</a></li>
+               <li><a class="dropdown-item" href="#">DEPORTE</a></li>
+               <li><a class="dropdown-item" href="#">ROMANTICA</a></li>
+             </ul>
+          </div>
+          <!--Mas opciones-->
+          <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
+           
+            
+              <ul class="navbar-nav me-auto  lg-0  ">
+                <li class="nav-item">
+                <a class="nav-link text-white " aria-current="page" href="#">MAS VENDIDOS</a>
+              </li>
+              </ul>
+
+            <div class=""  >
+              <i class="fa-solid fa-circle-user" style="color: #f2f2f2; margin-right:20px;" ></i>
+              <i class="fa-solid fa-cart-shopping " style="color: #e9ecf1; margin-right:30px;"></i>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+         <div class="navbar navbar-expand-lg navbar-light bg-dark ">
+           
+            <div class="input-group ms-5 me-5 mb-5 mt-3">
+              <input type="text" class="form-control" placeholder="Titulo,Autor,isbn ..." aria-label="Recipient's username" aria-describedby="basic-addon2" >
+              <button class="btn btn-outline-light" type="button">Buscar</button>
+              
+            </div>
+         </div>
+     
+        
+      
