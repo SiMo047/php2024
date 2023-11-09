@@ -25,4 +25,94 @@
    
 
 
+
+        /**
+         * Get the value of id
+         */
+        public function getId()
+        {
+                return $this->id;
+        }
+
+        /**
+         * Set the value of id
+         */
+        public function setId($id): self
+        {
+                $this->id = $id;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of nombre_Corredor
+         */
+        public function getNombreCorredor()
+        {
+                return $this->nombre_Corredor;
+        }
+
+        /**
+         * Set the value of nombre_Corredor
+         */
+        public function setNombreCorredor($nombre_Corredor): self
+        {
+                $this->nombre_Corredor = $nombre_Corredor;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of posicion
+         */
+        public function getPosicion()
+        {
+                return $this->posicion;
+        }
+
+        /**
+         * Set the value of posicion
+         */
+        public function setPosicion($posicion): self
+        {
+                $this->posicion = $posicion;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of tiempo
+         */
+        public function getTiempo()
+        {
+                return $this->tiempo;
+        }
+
+        /**
+         * Set the value of tiempo
+         */
+        public function setTiempo($tiempo): self
+        {
+                $this->tiempo = $tiempo;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of pais
+         */
+        public function getPais()
+        {
+                return $this->pais;
+        }
+
+        /**
+         * Set the value of pais
+         */
+        public function setPais($pais): self
+        {
+                $this->pais = $pais;
+
+                return $this;
+        }
     }
