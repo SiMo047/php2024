@@ -24,10 +24,10 @@
     
             foreach($resultados as $resultado) {
                 echo "<tr>";
-                echo " <td>".$resultado->getNombre_Corredor()"</td>";
-                echo " <td>".$resultado->getPosicion()."</td>";
-                echo " <td>".$resultado->getTiempo()."</td>";
-                echo " <td>".$resultado->getPais()."</td>";
+                echo "<td>".$resultado->getNombre_Corredor()."</td>";
+                echo "<td>".$resultado->getPosicion()."</td>";
+                echo "<td>".$resultado->getTiempo()."</td>";
+                echo "<td>".$resultado->getPais()."</td>";
                 echo "<td>";
                 echo "<a href='index.php?accion=eliminarResultado&id=".$resultado->getId()."'><button class='btn btn-danger'>X</button>";
                 echo "</td>";
