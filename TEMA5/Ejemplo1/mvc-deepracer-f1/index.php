@@ -26,6 +26,8 @@
                 $id = $_REQUEST['id'];
                 ControladorDeepRacer::eliminarResultado($id);
             }
+            //COMPROBACION 
+            
 
 
 

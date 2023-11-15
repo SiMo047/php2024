@@ -21,10 +21,20 @@
                 ControladorRegalos::mostrarLogin();
             }
 
-            //MOSTRAR TABALA CON LOS REGALOS 
-            if (strcmp($_REQUEST['accion'],'iniciasesion') == 0) {
-               echo " hola ";
+            //Recoger form login
+            if (strcmp($_REQUEST['accion'],'loginUsuario') == 0) {
+                $email= $_REQUEST['email'];
+                $password= $_REQUEST['password'];
+                
+                ControladorRegalos::checklogin($email,$password);
+            
             }
+
+              //MOSTRAR TABALA CON LOS REGALOS 
+              //if (strcmp($_REQUEST['accion'],'iniciasesion') == 0) {
+              
+              //}
+
 
             //ELIMINAR UN RESULTADO
             if (strcmp($_REQUEST['accion'],'eliminarResultado') == 0) {

@@ -41,27 +41,28 @@
   <body class="text-center">
     
 <main class="form-signin">
-  <form>
+  <!--Action index.php (lleva el formulario al index) (metodo POST para llevar los datos ) -->
+  <form action="index.php" method="post">
     <img class="mb-4" src="./vistas/img/logo.png" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Iniciar Sesion</h1>
 
+        <!-- name=Email -->
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" required/>
       <label for="floatingInput">Email</label>
     </div>
+   
+      <!-- name=Password -->
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required/>
       <label for="floatingPassword">Contraseña</label>
     </div>
 
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Recordar
-      </label>
-    </div>
-    <a href="index.php?accion=iniciasesion">
-    <button class="w-100 btn btn-lg btn-primary" type="button">Iniciar Sesion</button>
-    </a>
+
+  
+      <!--  submit para enviar // name=accion -->
+    <button type="submit" class="w-100 btn btn-lg btn-primary"  name="accion" value="loginUsuario">Iniciar Sesion</button>
+   
   </form>
 </main>
 
