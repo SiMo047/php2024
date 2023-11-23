@@ -1,9 +1,11 @@
 <?php
 
     namespace Regalos\controladores;
-    use Regalos\modelos\ModeloUsuario;    
+    use Regalos\modelos\ModeloUsuario;  
+    use Regalos\modelos\ModeloRegalo;   
     use Regalos\vistas\VistaLogin;
     use Regalos\vistas\VistaInicio;
+    use Regalos\vistas\VistaRegalos;
  
 
     class ControladorRegalos {
@@ -22,19 +24,37 @@
         }
 
         /**
-         * Metodo que comprueba el email y la contraseña
+         * Metodo que comprueba el email y la contraseña que has recogido del login 
          */
         public static function checklogin($email,$password){
            
            
+            //objeto usuario
             $usuario = ModeloUsuario::checkloginM($email,$password);
-        
+            
+              $emaill= $usuario->getEmail();
+            
             if ($usuario==false){
-                echo "usuario no existe ";
+                echo "USUARIO NO EXISTENTE ";
             } else {
-                echo "Correecto";
-            }
+               
+            $regalos= ModeloRegalo::Regalos($usuario->getId());
+                
+              VistaRegalos::mostrar($regalos);
+
+        }
   
+      }
+
+      public static function insertarRegalo($nuevoR){
+
+        ModeloRegalo::insertar($nuevoR);
+
+        $regalos= ModeloRegalo::Regalos($usuario->getId());
+                
+        VistaRegalos::mostrar($regalos);
+      
+
       }
 
     }

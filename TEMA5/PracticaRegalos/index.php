@@ -1,6 +1,7 @@
 <?php
     namespace Regalos;
     use Regalos\controladores\ControladorRegalos;
+    use Regalos\modelos\Regalo;
 
     //Autocargar las clases --------------------------
     spl_autoload_register(function ($class) {
@@ -30,11 +31,21 @@
             
             }
 
-              //MOSTRAR TABALA CON LOS REGALOS 
-              //if (strcmp($_REQUEST['accion'],'iniciasesion') == 0) {
-              
-              //}
+            //Nuevo Regalo
+           //if (strcmp($_REQUEST['accion'],'nuevoRegalo') == 0) {
+             //   $nombre=$_REQUEST['nombre'];
+              //  $destinatario=$_REQUEST['destinatario'];
+              //  $precio=$_REQUEST['precio'];
+              //  $estado=$_REQUEST['estado'];
+              //  $year=$_REQUEST['year'];
+              //  $id_usuario=$_REQUEST['id_usuario'];
 
+              //  $nuevoR= new Regalo(nombre:$nombre,destinatario:$destinatario,precio:$precio,estado:$estado,year:$year,id_usuario:$id_usuario);
+
+              //  ControladorRegalos::insertarRegalo($nuevoR);
+           // }
+
+              
 
             //ELIMINAR UN RESULTADO
             if (strcmp($_REQUEST['accion'],'eliminarResultado') == 0) {
