@@ -22,6 +22,7 @@ class VistaRegalos {
                     <th>Precio </th>
                     <th>Estado </th>
                     <th>Year </th>
+                    <th>Acciones </th>
                     
                 </tr>
             </thead>
@@ -36,6 +37,11 @@ class VistaRegalos {
                 echo " <td>".$regalo->getPrecio()."</td>";
                 echo " <td>".$regalo->getEstado()."</td>";
                 echo " <td>".$regalo->getYear()."</td>";
+                echo "<td>";
+                echo "<a href='index.php?accion=borrarRegalo&id=".$regalo->getId()."&id_user=".$regalo->getIdUsuario()."'><button class='btn btn-danger'>X</button>";
+                echo "<a href='index.php?accion=modificarRegalo&id=".$regalo->getId()."'><button class='btn btn-warning ms-1'>Modificar</button>";
+                echo "</td>";
+       
        
                 echo "</tr>";
             }
@@ -61,6 +67,8 @@ class VistaRegalos {
              
 
    }
+   
+ 
 
 
 }

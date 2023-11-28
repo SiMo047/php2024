@@ -43,7 +43,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
 
                                     <a class="nav-link" data-bs-toggle="modal" data-bs-target="#addregalo" href="#" >Añadir Regalo</a>
-                                    <a class="nav-link" href="">Borrar Regalos</a>
+                                  
                                 </nav>
                             
                             

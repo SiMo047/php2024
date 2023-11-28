@@ -47,10 +47,22 @@
 
               
 
-            //ELIMINAR UN RESULTADO
-            if (strcmp($_REQUEST['accion'],'eliminarResultado') == 0) {
-                $id = $_REQUEST['id'];
-                ControladorRegalos::eliminarResultado($id);
+            //Borrar Regalo
+            if (strcmp($_REQUEST['accion'],'borrarRegalo') == 0) {
+                
+                $id_regalo = $_REQUEST['id'];
+                $id_usuario =$_REQUEST['id_user'];
+                ControladorRegalos::borrarRegalo($id_regalo,$id_usuario);
+              
+               
+            }
+
+            //Modificar Regalo
+            if (strcmp($_REQUEST['accion'],'modificarRegalo') == 0) {
+                $id_regalo = $_REQUEST['id'];
+                ControladorRegalos::mostrarForm($id_regalo);
+
+
             }
 
 

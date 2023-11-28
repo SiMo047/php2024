@@ -6,6 +6,7 @@
     use Regalos\vistas\VistaLogin;
     use Regalos\vistas\VistaInicio;
     use Regalos\vistas\VistaRegalos;
+    use Regalos\vistas\VistaRegaloForm;
  
 
     class ControladorRegalos {
@@ -41,7 +42,7 @@
             $regalos= ModeloRegalo::Regalos($usuario->getId());
                 
               VistaRegalos::mostrar($regalos);
-
+           
         }
   
       }
@@ -55,6 +56,19 @@
         VistaRegalos::mostrar($regalos);
       
 
+      }
+      //continuar ---------------------------
+      public static function borrarRegalo($id_regalo,$id_usuario){
+        ModeloRegalo::eliminarRegalo($id_regalo);
+        $regalos= ModeloRegalo::Regalos($id_usuario);
+        VistaRegalos::mostrar($regalos);
+      }
+
+      public static function mostrarForm($id_regalo){
+
+        $regalo=ModeloRegalo::getRegalo($id_regalo);
+
+        VistaRegaloForm::form($regalo);
       }
 
     }

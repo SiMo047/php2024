@@ -60,5 +60,26 @@
 
 
 
+        //get regalo
+        public static function getRegalo($id_regalo){
+            $conexionObject = new ConexionBaseDeDatos();
+            $conexion = $conexionObject->getConexion();
+
+            $consulta = $conexion->prepare("SELECT * FROM regalos WHERE id=?");
+            $consulta->bindValue(1,$id_regalo);
+            $consulta->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'Regalos\modelos\Regalo'); //Nombre de la clase
+            $consulta->execute();
+    
+            $resultados = $consulta->fetch();
+            $conexionObject->cerrarConexion();
+
+            return $resultados;
+
+
+
+        }
+
+
+
 
     }
