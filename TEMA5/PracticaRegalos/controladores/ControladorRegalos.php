@@ -75,8 +75,9 @@
       public static function modificarRegalo($regalo){
 
         ModeloRegalo::modificarRegalo($regalo);
-
-        $regalos= ModeloRegalo::Regalos($regalo->getIdUsuario());
+       //ModeloRegalo::modificarRegalo($id,$nombre,$destinatario,$precio,$estado,$years,$id_user);
+        
+       $regalos= ModeloRegalo::Regalos($regalo->getId());
                 
         VistaRegalos::mostrar($regalos);
 

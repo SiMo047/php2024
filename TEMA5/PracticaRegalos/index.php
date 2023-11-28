@@ -37,10 +37,10 @@
               //  $destinatario=$_REQUEST['destinatario'];
               //  $precio=$_REQUEST['precio'];
               //  $estado=$_REQUEST['estado'];
-              //  $year=$_REQUEST['year'];
+              //  $years=$_REQUEST['years'];
               //  $id_usuario=$_REQUEST['id_usuario'];
 
-              //  $nuevoR= new Regalo(nombre:$nombre,destinatario:$destinatario,precio:$precio,estado:$estado,year:$year,id_usuario:$id_usuario);
+              //  $nuevoR= new Regalo(nombre:$nombre,destinatario:$destinatario,precio:$precio,estado:$estado,years:$years,id_usuario:$id_usuario);
 
               //  ControladorRegalos::insertarRegalo($nuevoR);
            // }
@@ -64,29 +64,26 @@
              }
 
              if (strcmp($_REQUEST['accion'],'recibirFormModificar') == 0) {
+                
+                  
 
-               
                 $nombre = $_REQUEST['nombre'];
                 $destinatario = $_REQUEST['destinatario'];
                 $precio = $_REQUEST['precio'];
                 $estado = $_REQUEST['estado'];
-                $year = $_REQUEST['year'];
+                $years = $_REQUEST['years'];
                 $id = $_REQUEST['id'];
                 $id_user = $_REQUEST['id_usuario'];
 
-                //recibir datos del formulario funciona ( var_dump($_REQUEST);)
                 
-                $regalo = new Regalo(
-                    $id,
-                    $nombre,
-                    $destinatario,
-                    $precio,
-                    $estado,
-                    $year,
-                    $id_user
-                );
+                
 
-            ControladorRegalos::modificarRegalo($regalo);
+
+               $regalo = new Regalo(id:$id,nombre: $nombre,destinatario:$destinatario,precio:$precio,estado:$estado,years:$years,
+               id_usuario:$id_user);
+
+                
+           //ControladorRegalos::modificarRegalo($id,$nombre,$destinatario,$precio,$estado,$years,$id_user);
 
                 
                 

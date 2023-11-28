@@ -56,10 +56,10 @@ class VistaRegaloForm{
               </div>
               <div class="row g-3 align-items-center mb-2">
                   <div class="col-4">
-                      <label for="year" class="col-form-label">Year</label>
+                      <label for="years" class="col-form-label">Year</label>
                   </div>
                   <div class="col-8">
-                      <input type="year" id="year" name="year" value="<?=$regalo->getYear()?>">
+                      <input type="years" id="years" name="years" value="<?=$regalo->getYear()?>">
                   </div>
               </div>
               <input type="hidden" name="id" value="<?=$regalo->getId()?>">

@@ -11,17 +11,17 @@ class Regalo{
     private $destinatario ;
     private $precio; 
     private $estado;
-    private $year;
+    private $years;
     private $id_usuario; 
 
 
-    public function __contruct($id="",$nombre="",$destinatario="",$precio="",$estado="",$year="",$id_usuario=""){
+    public function __contruct($id="",$nombre="",$destinatario="",$precio="",$estado="",$years="",$id_usuario=""){
         $this->id=$id;
         $this->nombre=$nombre;
         $this->destinatior=$destinatario;
         $this->precio=$precio;
         $this->estado=$estado;
-        $this->year=$year;
+        $this->years=$years;
         $this->id_usuario=$id_usuario;
     }
 
@@ -117,19 +117,19 @@ class Regalo{
     }
 
     /**
-     * Get the value of year
+     * Get the value of years
      */
     public function getYear()
     {
-        return $this->year;
+        return $this->years;
     }
 
     /**
-     * Set the value of year
+     * Set the value of years
      */
-    public function setYear($year): self
+    public function setYear($years): self
     {
-        $this->year = $year;
+        $this->years = $years;
 
         return $this;
     }

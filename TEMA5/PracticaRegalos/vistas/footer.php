@@ -69,10 +69,10 @@
                 </div>
                 <div class="row g-3 align-items-center mb-2">
                     <div class="col-4">
-                        <label for="year" class="col-form-label">Year</label>
+                        <label for="years" class="col-form-label">Year</label>
                     </div>
                     <div class="col-8">
-                        <input type="year" id="year" name="year">
+                        <input type="years" id="years" name="years">
                     </div>
                 </div>
                 <input type="hidden" id="id_usuario" name="id_usuario" value="<?=$usuario->getId()?>">

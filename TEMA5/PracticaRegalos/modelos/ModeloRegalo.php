@@ -31,7 +31,7 @@
             $conexionObject = new ConexionBaseDeDatos();
             $conexion = $conexionObject->getConexion();
 
-            $consulta = $conexion->prepare("INSERT INTO regalos (nombre,destinatario,precio,estado,year,id_usuario) VALUES (?,?,?,?,?,?)");
+            $consulta = $conexion->prepare("INSERT INTO regalos (nombre,destinatario,precio,estado,years,id_usuario) VALUES (?,?,?,?,?,?)");
             $consulta->bindValue(1, $nuevoR->getNombre());
             $consulta->bindValue(2, $nuevoR->getDestinatario());
             $consulta->bindValue(3, $nuevoR->getPrecio());
@@ -86,7 +86,7 @@
             $conexionObject = new ConexionBaseDeDatos();
             $conexion = $conexionObject->getConexion();
 
-            $consulta = $conexion->prepare("UPDATE regalos SET nombre=?, destinatario=?, precio=?, estado=?, year=? WHERE id=?");
+            $consulta = $conexion->prepare("UPDATE regalos SET nombre=?, destinatario=?, precio=?, estado=?, years=? WHERE id=?");
             $consulta->bindValue(1, $nuevoR->getNombre());
             $consulta->bindValue(2, $nuevoR->getDestinatario());
             $consulta->bindValue(3, $nuevoR->getPrecio());
@@ -99,7 +99,22 @@
 
         }
 
+        public static function modificarRegalo2($id,$nombre,$destinatario,$precio,$estado,$years,$id_user){
+            $conexionObject = new ConexionBaseDeDatos();
+            $conexion = $conexionObject->getConexion();
 
+            $consulta = $conexion->prepare("UPDATE regalos SET nombre=?, destinatario=?, precio=?, estado=?, years=? WHERE id=?");
+            $consulta->bindValue(1, $nombre);
+            $consulta->bindValue(2, $destinatario);
+            $consulta->bindValue(3, $precio);
+            $consulta->bindValue(4, $estado);
+            $consulta->bindValue(5, $years);
+            $consulta->bindValue(6, $id);
+            $consulta->execute();
+
+            $conexionObject->cerrarConexion();
+
+        }
 
 
     }
