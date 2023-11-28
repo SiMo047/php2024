@@ -4,9 +4,13 @@ namespace Regalos\vistas;
 
 class VistaRegaloForm{
 
-    public static function form($id){
+    public static function form($regalo){
 
-        echo "<div class='container'";
+        include "cabecera.php";
+        echo "
+        <div class='container-fluid px-5'>
+        <h1 class='mt-4'>Modificar Regalo</h1>";
+
 ?>
 
 
@@ -18,7 +22,7 @@ class VistaRegaloForm{
                       <label for="nombre" class="col-form-label">Nombre</label>
                   </div>
                   <div class="col-8">
-                      <input type="text" id="nombre" name="nombre" value="<?=$id->getNombre()?>" class="form-control" required>
+                      <input type="text" id="nombre" name="nombre" value="<?=$regalo->getNombre()?>" class="form-control " required>
                   </div>
               </div>
               <div class="row g-3 align-items-center mb-2">
@@ -26,7 +30,7 @@ class VistaRegaloForm{
                       <label for="destinatario" class="col-form-label">Destinatario</label>
                   </div>
                   <div class="col-8">
-                      <input type="text" id="destinatario" name="destinatario" value="<?=$id->getDestinatario()?>"class="form-control" required>
+                      <input type="text" id="destinatario" name="destinatario" value="<?=$regalo->getDestinatario()?>"class="form-control" required>
                   </div>
               </div>
               <div class="row g-3 align-items-center mb-2">
@@ -34,7 +38,7 @@ class VistaRegaloForm{
                       <label for="precio" class="col-form-label">Precio</label>
                   </div>
                   <div class="col-8">
-                      <input type="number" id="precio" name="precio" value="<?=$id->getPrecio()?>"class="form-control" >
+                      <input type="number" id="precio" name="precio" value="<?=$regalo->getPrecio()?>"class="form-control" >
                   </div>
               </div>
               <div class="row g-3 align-items-center mb-2">
@@ -42,11 +46,11 @@ class VistaRegaloForm{
                       <label for="estado" class="col-form-label">Estado</label>
                   </div>
                   <div class="col-8">
-                      <select  id="estado" name="estado" value="<?=$id->getEstado()?>">
-                          <option value="pediente">Pendiente</option>
-                          <option value="comprado">Comprado</option>
-                          <option value="envuelto">Envuelto</option>
-                          <option value="entregado">Entegado</option>
+                      <select  id="estado" name="estado" value="<?=$regalo->getEstado()?>">
+                          <option value="pendiente" <?= ($regalo->getEstado() == 'pendiente') ? 'selected' : '' ?>>Pendiente</option>
+                          <option value="comprado" <?= ($regalo->getEstado() == 'comprado') ? 'selected' : '' ?>>Comprado</option>
+                          <option value="envuelto" <?= ($regalo->getEstado() == 'envuelto') ? 'selected' : '' ?>>Envuelto</option>
+                          <option value="entregado" <?= ($regalo->getEstado() == 'entregado') ? 'selected' : '' ?>>Entregado</option>
                       </select>
                   </div>
               </div>
@@ -55,18 +59,25 @@ class VistaRegaloForm{
                       <label for="year" class="col-form-label">Year</label>
                   </div>
                   <div class="col-8">
-                      <input type="year" id="year" name="year" value="<?=$id->getYear()?>">
+                      <input type="year" id="year" name="year" value="<?=$regalo->getYear()?>">
                   </div>
               </div>
-              <input type="hidden" id="id_usuario" name="id_usuario" value="<?=$id->getId()?>">
+              <input type="hidden" name="id" value="<?=$regalo->getId()?>">
+              <input type="hidden" name="id_usuario" value="<?=$regalo->getIdUsuario()?>">
               <div class="mb-3 row w-25 float-end">
-        <button class='btn btn-success' type="submit" name="accion" value="recibirFormModi">Modificar</button>
+        <button class='btn btn-success' type="submit" name="accion" value="recibirFormModificar">Modificar</button>
     </div>
           </form>       
 
             
 
 <?php
+
+        echo"</div>";
+        echo"<br>";
+        echo"<br>";
+        echo"<br>";
+        include "footer.php";
     }   //continuarrr
 }
 ?>

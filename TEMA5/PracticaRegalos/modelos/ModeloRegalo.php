@@ -31,13 +31,13 @@
             $conexionObject = new ConexionBaseDeDatos();
             $conexion = $conexionObject->getConexion();
 
-            $consulta = $conexion->prepare("INSERT INTO regalos (nombre, destinatario, precio,estado,year,id_usuario) VALUES (?,?,?,?,?,?)");
-            $consulta->bindValue(1, $nuevoR->getModelo());
-            $consulta->bindValue(2, $nuevoR->getPista());
-            $consulta->bindValue(3, $nuevoR->getTiempo());
-            $consulta->bindValue(4, $nuevoR->getColisiones());
-            $consulta->bindValue(5, $nuevoR->getColisiones());
-            $consulta->bindValue(6, $nuevoR->getColisiones());
+            $consulta = $conexion->prepare("INSERT INTO regalos (nombre,destinatario,precio,estado,year,id_usuario) VALUES (?,?,?,?,?,?)");
+            $consulta->bindValue(1, $nuevoR->getNombre());
+            $consulta->bindValue(2, $nuevoR->getDestinatario());
+            $consulta->bindValue(3, $nuevoR->getPrecio());
+            $consulta->bindValue(4, $nuevoR->getEstado());
+            $consulta->bindValue(5, $nuevoR->getYear());
+            $consulta->bindValue(6, $nuevoR->getId_usuario());
             $consulta->execute();
 
             $conexionObject->cerrarConexion();
@@ -76,6 +76,26 @@
             return $resultados;
 
 
+
+        }
+
+
+        //Modificar Regalo
+         //Funcion para insertar un nuevo regalo en la base de datos 
+         public static function modificarRegalo($nuevoR){
+            $conexionObject = new ConexionBaseDeDatos();
+            $conexion = $conexionObject->getConexion();
+
+            $consulta = $conexion->prepare("UPDATE regalos SET nombre=?, destinatario=?, precio=?, estado=?, year=? WHERE id=?");
+            $consulta->bindValue(1, $nuevoR->getNombre());
+            $consulta->bindValue(2, $nuevoR->getDestinatario());
+            $consulta->bindValue(3, $nuevoR->getPrecio());
+            $consulta->bindValue(4, $nuevoR->getEstado());
+            $consulta->bindValue(5, $nuevoR->getYear());
+            $consulta->bindValue(6, $nuevoR->getId());
+            $consulta->execute();
+
+            $conexionObject->cerrarConexion();
 
         }
 

@@ -13,7 +13,18 @@ class VistaRegalos {
         include "cabecera.php";
      
      
-      echo' <div class="card-body">
+      echo'  <div class="container-fluid px-4">
+                <h1 class="mt-4">Lista Regalos</h1>
+      
+                 <div class="card mb-4">
+                  <div class="card-header">
+                   <i class="fas fa-table me-1"></i>
+                      Regalos
+                  </div> 
+      
+      
+      
+        <div class="card-body">
         <table class="table table-secondary" id="datatablesSimple">
             <thead>
                 <tr>

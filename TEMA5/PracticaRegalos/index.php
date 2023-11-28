@@ -57,13 +57,42 @@
                
             }
 
-            //Modificar Regalo
+            //Mostrar Formulario para modifcar el  Regalo
             if (strcmp($_REQUEST['accion'],'modificarRegalo') == 0) {
                 $id_regalo = $_REQUEST['id'];
                 ControladorRegalos::mostrarForm($id_regalo);
+             }
 
+             if (strcmp($_REQUEST['accion'],'recibirFormModificar') == 0) {
 
-            }
+               
+                $nombre = $_REQUEST['nombre'];
+                $destinatario = $_REQUEST['destinatario'];
+                $precio = $_REQUEST['precio'];
+                $estado = $_REQUEST['estado'];
+                $year = $_REQUEST['year'];
+                $id = $_REQUEST['id'];
+                $id_user = $_REQUEST['id_usuario'];
+
+                //recibir datos del formulario funciona ( var_dump($_REQUEST);)
+                
+                $regalo = new Regalo(
+                    $id,
+                    $nombre,
+                    $destinatario,
+                    $precio,
+                    $estado,
+                    $year,
+                    $id_user
+                );
+
+            ControladorRegalos::modificarRegalo($regalo);
+
+                
+                
+                
+             }
+
 
 
 

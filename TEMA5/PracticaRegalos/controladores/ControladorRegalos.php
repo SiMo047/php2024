@@ -51,13 +51,13 @@
 
         ModeloRegalo::insertar($nuevoR);
 
-        $regalos= ModeloRegalo::Regalos($usuario->getId());
+        $regalos= ModeloRegalo::Regalos($nuevoR->getId());
                 
         VistaRegalos::mostrar($regalos);
       
 
       }
-      //continuar ---------------------------
+ 
       public static function borrarRegalo($id_regalo,$id_usuario){
         ModeloRegalo::eliminarRegalo($id_regalo);
         $regalos= ModeloRegalo::Regalos($id_usuario);
@@ -69,6 +69,17 @@
         $regalo=ModeloRegalo::getRegalo($id_regalo);
 
         VistaRegaloForm::form($regalo);
+      }
+
+
+      public static function modificarRegalo($regalo){
+
+        ModeloRegalo::modificarRegalo($regalo);
+
+        $regalos= ModeloRegalo::Regalos($regalo->getIdUsuario());
+                
+        VistaRegalos::mostrar($regalos);
+
       }
 
     }
