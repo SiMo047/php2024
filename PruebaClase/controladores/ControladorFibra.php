@@ -4,7 +4,10 @@ namespace Fibra\controladores;
 
 use Fibra\vistas\VistaInicio;
 use Fibra\vistas\VistaIncidencias;
+use Fibra\vistas\VistaClientes;
+use Fibra\vistas\VistaAñadirIncidencia;
 use Fibra\modelos\ModeloIncidencias;
+use Fibra\modelos\ModeloClientes;
 
 
 class ControladorFibra{
@@ -39,6 +42,39 @@ class ControladorFibra{
             $incidencias=ModeloIncidencias::incidencias();
 
             VistaIncidencias::mostrarIncidencias($incidencias);
+        }
+
+
+        //Buscar por incidencia 
+        public static function buscarIncidencia($incidencia){
+
+            $incidencias = ModeloIncidencias::buscarIncidencia($incidencia);
+
+            VistaIncidencias::mostrarIncidencias($incidencias);
+
+        }
+        //Buscar por Cliente
+        public static function buscarCliente($cliente){
+
+            $cliente = ModeloClientes::buscarCliente($cliente);
+            VistaClientes::mostrarClientes($cliente);
+
+        }
+
+        //Metodo que añade incidencia (muetra los clientes )
+        public static function añadirIncidencia(){
+
+            $clientes = ModeloClientes::mostrarClientes();
+
+            VistaClientes::mostrarClientes($clientes);
+
+        }
+
+        //Metodo que muestra form para añadir una nueva incidencia 
+        public static function añadirInciForm($id){
+
+            VistaAñadirIncidencia::añadirIncidencia($id);
+
         }
 }
 

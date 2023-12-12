@@ -26,7 +26,7 @@
     //cada vez que llamamos a fetch nos devuelve una fila 
     // las claves del array
     while($row = $stmt->fetch()){
-        echo "Nombre: " . $row['nombre'] . "<br>";
+        echo "Nombre: " . $row['nombre'] ."<br>";
         echo "Email: " . $row['email'] . "<br>";
     }
     

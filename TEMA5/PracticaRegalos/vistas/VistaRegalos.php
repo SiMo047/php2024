@@ -22,7 +22,7 @@ class VistaRegalos {
                       Regalos
                   </div> 
       
-      
+        
       
         <div class="card-body">
         <table class="table table-secondary" id="datatablesSimple">

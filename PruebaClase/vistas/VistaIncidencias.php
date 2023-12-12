@@ -9,11 +9,18 @@ class VistaIncidencias{
 
             include "cabecera.php";
 
-            echo'<main class="px-3">
-                <div class="card-header d-flex justify-content-center ">
-                    <i class="fas fa-table "> INCIDECIAS</i>
+            echo'<main class="px-3">';
+ ?>
+                    <form action="index.php" method="post" class=" mb-5">
+                        <input class="col-8 p-2"  type="text" name="incidencia" id="incidencia" placeholder="Buscar Ciudad/Estado" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-lg-0" type="submit"name="accion" value="buscarIncidencia">Buscar</button>
+                    </form>
+            
+ <?php
+                    
+          echo  '<i class="fas fa-table ">INCIDECIAS</i>
                        
-                </div>
+                
                  <div class="card-body d-flex justify-content-center ">
                 <table class="table table-secondary " id="datatablesSimple ">
                     <thead>
@@ -62,6 +69,8 @@ class VistaIncidencias{
         include "cabecera.php";
 
         echo'<main class="px-3">
+
+              
             <div class="card-header d-flex justify-content-center ">
                 <i class="fas fa-table "> INCIDECIAS</i>
                    

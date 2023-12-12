@@ -28,6 +28,7 @@ if (isset($_REQUEST)) {
           //Añadir Inicidencia
           if (strcmp($_REQUEST['accion'],'añadirIncidencia') == 0) {
 
+            ControladorFibra::añadirIncidencia();
             
         }
           //Enseña la vista con la tabla con los botones en rojo
@@ -46,6 +47,30 @@ if (isset($_REQUEST)) {
 
         }
 
+
+         //Metodo para buscar por estado o ciudad 
+         if (strcmp($_REQUEST['accion'],'buscarIncidencia') == 0) {
+            $incidencia = $_REQUEST['incidencia'];
+
+            ControladorFibra::buscarIncidencia($incidencia);
+        }
+
+        //Metodo para buscar por dni o nombre 
+        if (strcmp($_REQUEST['accion'],'buscarCliente') == 0) {
+            
+            $cliente=$_REQUEST['cliente'];
+
+            ControladorFibra::buscarCliente($cliente);
+
+        }
+
+        //Metodo que muestra un form para añadir una nueva incidencia 
+        if (strcmp($_REQUEST['accion'],'añadirIC') == 0) {
+
+            $id=$_REQUEST['id'];
+          
+            ControladorFibra::añadirInciForm($id);
+        }
 
     } else {
         //Mostrar inicio

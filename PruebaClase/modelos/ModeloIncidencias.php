@@ -35,4 +35,21 @@
 
     }
 
+
+    public static function buscarIncidencia($incidencia){
+
+        $conexionObject = new ConexionBaseDeDatos();
+        $conexion = $conexionObject->getConexion();
+
+        $consulta = $conexion->prepare("SELECT * FROM Incidencias WHERE ciudad = ? OR estado LIKE '%$incidencia%'");
+        $consulta -> bindValue(1,$incidencia);
+        $consulta -> setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'Fibra\modelos\Incidencia'); //Nombre de la clase
+        $consulta -> execute();
+
+        $incidencias = $consulta->fetchAll();
+
+        $conexionObject -> cerrarConexion();
+
+        return $incidencias;
+    }
 }
