@@ -53,14 +53,7 @@ class ControladorFibra{
             VistaIncidencias::mostrarIncidencias($incidencias);
 
         }
-        //Buscar por Cliente
-        public static function buscarCliente($cliente){
-
-            $cliente = ModeloClientes::buscarCliente($cliente);
-            VistaClientes::mostrarClientes($cliente);
-
-        }
-
+     
         //Metodo que añade incidencia (muetra los clientes )
         public static function añadirIncidencia(){
 
@@ -70,10 +63,48 @@ class ControladorFibra{
 
         }
 
+           //Buscar por Cliente
+           public static function buscarCliente($cliente){
+
+            $cliente = ModeloClientes::buscarCliente($cliente);
+            VistaClientes::mostrarClientes($cliente);
+
+        }
+
         //Metodo que muestra form para añadir una nueva incidencia 
         public static function añadirInciForm($id){
 
             VistaAñadirIncidencia::añadirIncidencia($id);
+
+        }
+
+
+        public static function nuevaIncidencia($latitud, $longitud, $ciudad, $direccion, $solucion, $estado, $id){
+
+            ModeloIncidencias::nuevaIncidencia($latitud, $longitud, $ciudad, $direccion, $solucion, $estado, $id);
+
+            
+            $incidencias=ModeloIncidencias::incidencias();
+
+            VistaIncidencias::mostrarIncidencias($incidencias);
+
+
+        }
+
+
+        public static function modificarIncidencia(){
+
+            $incidencias=ModeloIncidencias::incidencias();
+
+            VistaIncidencias::modificarIncidencia($incidencias);
+        }
+
+        public static function modificarI($id){
+            
+            
+            $incidencia = ModeloIncidencias::modificarI($id);
+            VistaIncidencias::modiform($incidencia);
+
 
         }
 }

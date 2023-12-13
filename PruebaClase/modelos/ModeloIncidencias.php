@@ -52,4 +52,45 @@
 
         return $incidencias;
     }
+
+
+    public static function nuevaIncidencia($latitud, $longitud, $ciudad, $direccion, $solucion, $estado, $id){
+      
+        $conexionObject = new ConexionBaseDeDatos();
+        $conexion = $conexionObject->getConexion();
+         //Los nombres deben ser igual a la base de datos 
+        $consulta = $conexion->prepare(" INSERT INTO Incidencias (latitud,longitud,ciudad,direccion,solucion,estado,id_cliente) VALUES (?,?,?,?,?,?,?)");
+        $consulta -> bindValue(1,$latitud);
+        $consulta -> bindValue(2,$longitud);
+        $consulta -> bindValue(3,$ciudad);
+        $consulta -> bindValue(4,$direccion);
+        $consulta -> bindValue(5,$solucion);
+        $consulta -> bindValue(6,$estado);
+        $consulta -> bindValue(7,$id);
+        $consulta -> execute();
+
+        $conexionObject -> cerrarConexion();
+    }
+
+    public static function modificarI($id){
+
+
+        
+        $conexionObject = new ConexionBaseDeDatos();
+        $conexion = $conexionObject->getConexion();
+
+        $consulta = $conexion->prepare("SELECT * FROM Incidencias WHERE id = ?");
+        $consulta -> bindValue(1, $id);
+        $consulta -> setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'Fibra\modelos\Incidencia'); //Nombre de la clase
+        $consulta -> execute();
+
+        $incidencia = $consulta->fetch();
+
+        $conexionObject -> cerrarConexion();
+
+        return $incidencia;
+
+
+
+    }
 }

@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="en" class="h-100">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>FibraOptica</title>
+    <title>AmigoInvisible</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
 
     <!-- Bootstrap core CSS -->
 <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -32,11 +32,6 @@
         -webkit-user-select: none;
         -moz-user-select: none;
         user-select: none;
-
-      }
-
-      a#fo{
-        text-decoration:none
       }
 
       @media (min-width: 768px) {
@@ -46,22 +41,30 @@
       }
     </style>
 
-    
-    <!-- Custom styles for this template -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link href="css/cover.css" rel="stylesheet">
+
   </head>
-  <body class="d-flex h-100 text-center text-white bg-dark">
+  <body>
     
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="mb-auto">
-    <div>
-    <a id="fo" href="http://localhost:8080/PruebaClase/index.php"><h3 class="float-md-start mb-0">F.O incidencias</h3></a>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-      <a class="nav-link text-white-50"  href="index.php?accion=mostrarIncidencias">Mostrar Incidencias</a>
-        <a class="nav-link text-white-50" href="index.php?accion=añadirIncidencia">Añadir Incidencia</a>
-        <a class="nav-link text-white-50" href="index.php?accion=borrarIncidencia">Borra Incidencia</a>
-        <a class="nav-link text-white-50" href="index.php?accion=modificarIncidencia">Modificar Incidencia</a>
-      </nav>
+    <main>
+   
+
+    <div class="px-4 py-5 my-5 text-center">
+        <img class="d-block mx-auto mb-4" src="./vistas/img/smile.png.webp" alt="" width="200" >
+        <h1 class="display-5 fw-bold">Bienvenido a AmigoInvisible</h1>
+        <div class="col-lg-6 mx-auto">
+      
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-4 ">
+            <a href="index.php?accion=entrar">
+              <button type="button" class="btn btn-warning btn-lg px-4 gap-3">ENTRAR</button>
+            </a>
+        </div>
+        </div>
     </div>
-  </header>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </body>

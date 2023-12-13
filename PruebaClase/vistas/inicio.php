@@ -33,6 +33,9 @@
         -moz-user-select: none;
         user-select: none;
       }
+      a#fo{
+        text-decoration:none
+      }
 
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
@@ -52,7 +55,7 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
-      <h3 class="float-md-start mb-0">F.O incidencias</h3>
+      <a id="fo" href="http://localhost:8080/PruebaClase/index.php"><h3 class="float-md-start mb-0">F.O incidencias</h3></a>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link text-white-50"  href="index.php?accion=mostrarIncidencias">Mostrar Incidencias</a>
         <a class="nav-link text-white-50" href="index.php?accion=añadirIncidencia">Añadir Incidencia</a>

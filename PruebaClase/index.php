@@ -1,7 +1,7 @@
 <?php
-
+//Nombre del espacio 
 namespace Fibra;
-
+//nombre espacio + nombre carpeta :
 use Fibra\controladores\ControladorFibra;
 
  //Autocargar las clases --------------------------
@@ -37,13 +37,18 @@ if (isset($_REQUEST)) {
            ControladorFibra::borrarIncidencia();
         }
 
-            //Eliminar
+            //Eliminar Incidencia 
             if (strcmp($_REQUEST['accion'],'eliminar') == 0) {
                 $id = $_REQUEST['id'];
                 ControladorFibra::eliminarIncidencia($id);
             }
           //Modificar Incidencia
           if (strcmp($_REQUEST['accion'],'modificarIncidencia') == 0) {
+
+
+            ControladorFibra::modificarIncidencia();
+
+
 
         }
 
@@ -71,6 +76,35 @@ if (isset($_REQUEST)) {
           
             ControladorFibra::añadirInciForm($id);
         }
+
+
+        //Metodo que añade la incidencia viene del form con los datos 
+          if (strcmp($_REQUEST['accion'],'enviarAñadirIncidencia') == 0) {
+            $latitud = floatval($_REQUEST['latitud']);
+            $longitud = floatval($_REQUEST['longitud']);
+            $ciudad =$_REQUEST['ciudad'];
+            $direccion=$_REQUEST['direccion'];
+            $solucion=$_REQUEST['solucion'];
+            $estado=$_REQUEST['estado'];
+            $id=$_REQUEST['id'];
+
+            ControladorFibra::nuevaIncidencia($latitud, $longitud, $ciudad, $direccion, $solucion, $estado, $id);
+
+          }
+
+          if (strcmp($_REQUEST['accion'],'modificar') == 0) {
+            
+            
+            $id=$_REQUEST['id'];
+
+            ControladorFibra::modificarI($id);
+
+
+
+          }
+
+
+
 
     } else {
         //Mostrar inicio

@@ -64,6 +64,7 @@
         VistaRegalos::mostrar($regalos);
       }
 
+      
       public static function mostrarForm($id_regalo){
 
         $regalo=ModeloRegalo::getRegalo($id_regalo);
